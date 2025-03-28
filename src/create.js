@@ -36,6 +36,7 @@ document.getElementById('submitButton').addEventListener('click', () => {
     const tournamentGame = document.getElementById('tournamentGame').value;
     const startDateTime = document.getElementById('startDateTime').value;
     const endDateTime = document.getElementById('endDateTime').value;
+    const tournamentLocation = document.getElementById('tournamentLocation').value;
     const tournamentEntrants = document.getElementById('tournamentEntrants').value.split(',');
 
     if (!userID) {
@@ -43,7 +44,7 @@ document.getElementById('submitButton').addEventListener('click', () => {
         return;
     }
 
-    if (!tournamentName || !tournamentGame || !startDateTime || !endDateTime || tournamentEntrants.length === 0) {
+    if (!tournamentName || !tournamentGame || !startDateTime || !endDateTime || !tournamentLocation || tournamentEntrants.length === 0) {
         alert("All fields must be filled out.");
         return;
     }
@@ -54,6 +55,7 @@ document.getElementById('submitButton').addEventListener('click', () => {
         game: tournamentGame,
         startDateTime: startDateTime,
         endDateTime: endDateTime,
+        location: tournamentLocation,
         entrants: tournamentEntrants,
         createdBy: userID
     };
