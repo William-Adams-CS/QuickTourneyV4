@@ -43,6 +43,11 @@ document.getElementById('submitButton').addEventListener('click', () => {
         return;
     }
 
+    if (!tournamentName || !tournamentGame || !startDateTime || !endDateTime || tournamentEntrants.length === 0) {
+        alert("All fields must be filled out.");
+        return;
+    }
+
     const tournamentID = Date.now().toString(); // Unique ID based on timestamp
     const tournamentData = {
         name: tournamentName,
@@ -56,7 +61,8 @@ document.getElementById('submitButton').addEventListener('click', () => {
     set(ref(database, 'tournaments/' + tournamentID), tournamentData)
         .then(() => {
             alert("Tournament created successfully!");
-            document.getElementById('tournamentForm').reset();
+            localStorage.setItem('tournamentID', tournamentID); 
+            window.location.href = 'tournament.html';
         })
         .catch((error) => {
             console.error("Error creating tournament:", error);
