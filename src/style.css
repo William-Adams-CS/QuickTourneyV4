@@ -1,0 +1,74 @@
+/* filepath: c:\Users\wulli\Desktop\QuickTourneyV4\src\style.css */
+
+/* General Styles */
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    color: #ffffff;
+}
+
+a {
+    color: #1e90ff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    background-color: #1e90ff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #1c86ee;
+}
+
+input, select, textarea {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border: 1px solid #333333;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #1e90ff;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    border: 1px solid #333333;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+table tr:nth-child(even) {
+    background-color: #1a1a1a;
+}
+
+table tr:nth-child(odd) {
+    background-color: #121212;
+}

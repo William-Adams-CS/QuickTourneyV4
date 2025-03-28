@@ -1,3 +1,9 @@
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js")
+    .then(() => console.log("Service Worker Registered"))
+    .catch(error => console.log("Service Worker Registration Failed", error));
+}
+
 //Use https://www.gstatic.com/firebasejs/11.5.0/firebase-SERVICE.js for webmodules
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
