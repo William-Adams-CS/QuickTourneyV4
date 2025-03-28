@@ -22,6 +22,35 @@
         <h3>Participants</h3>
         <table id="participants-table"></ul>
     </div>
+    <nav class="bottom-navbar">
+        <a href="/home.html" class="nav-item">Home</a>
+        <a href="/create.html" class="nav-item">Create</a>
+        <a href="/join.html" class="nav-item">Join</a>
+        <a href="/mytournaments.html" class="nav-item">My Tournaments</a>
+    </nav>
+    <style>
+        .bottom-navbar {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+        }
+        .nav-item {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .nav-item.active {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        .nav-item:hover {
+            color: #ddd;
+        }
+    </style>
     <script type="module" src="tournament.js"></script>
 </body>
 </html>

@@ -72,3 +72,10 @@ table tr:nth-child(even) {
 table tr:nth-child(odd) {
     background-color: #121212;
 }
+
+/* Center all page contents horizontally */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

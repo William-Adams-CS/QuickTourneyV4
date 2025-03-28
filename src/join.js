@@ -68,17 +68,39 @@ document.getElementById('searchButton').addEventListener('click', async () => {
                 resultsContainer.innerHTML = '';
 
                 Object.entries(results).forEach(([id, tournament]) => {
-                    const tournamentElement = document.createElement('div');
-                    tournamentElement.classList.add('tournament-item');
-                    tournamentElement.textContent = `${tournament.name} - ${tournament.game} - ${tournament.location} - ${tournament.startDateTime}`;
-                    tournamentElement.style.cursor = 'pointer';
+                    const tournamentCard = document.createElement('div');
+                    tournamentCard.classList.add('tournament-card');
+                    tournamentCard.style.border = '1px solid #ccc';
+                    tournamentCard.style.borderRadius = '8px';
+                    tournamentCard.style.padding = '16px';
+                    tournamentCard.style.margin = '8px 0';
+                    tournamentCard.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)';
+                    tournamentCard.style.cursor = 'pointer';
+                    tournamentCard.style.transition = 'transform 0.2s';
+                    tournamentCard.style.backgroundColor = '#121212'; // Set background to dark
+                    tournamentCard.style.color = '#fff'; // Set text color to white
 
-                    tournamentElement.addEventListener('click', () => {
+                    tournamentCard.addEventListener('mouseover', () => {
+                        tournamentCard.style.transform = 'scale(1.02)';
+                    });
+
+                    tournamentCard.addEventListener('mouseout', () => {
+                        tournamentCard.style.transform = 'scale(1)';
+                    });
+
+                    tournamentCard.innerHTML = `
+                        <h3 style="margin: 0; color: #fff;">${tournament.name}</h3>
+                        <p style="margin: 4px 0; color: #ccc;"><strong>Game:</strong> ${tournament.game}</p>
+                        <p style="margin: 4px 0; color: #ccc;"><strong>Location:</strong> ${tournament.location}</p>
+                        <p style="margin: 4px 0; color: #ccc;"><strong>Start Date:</strong> ${tournament.startDateTime}</p>
+                    `;
+
+                    tournamentCard.addEventListener('click', () => {
                         localStorage.setItem('tournamentID', id);
                         window.location.href = 'tournament.html';
                     });
 
-                    resultsContainer.appendChild(tournamentElement);
+                    resultsContainer.appendChild(tournamentCard);
                 });
             } else if (resultCount === 1) {
                 const tournamentID = Object.keys(results)[0];
@@ -88,7 +110,7 @@ document.getElementById('searchButton').addEventListener('click', async () => {
                 console.log("No results found.");
             }
 
-            alert("Search completed. Check the console for results.");
+            alert("Search completed.");
         } else {
             alert("No matches found.");
         }
