@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickTourney - Create</title>
+    <script type="text/javascript">
+        indexCheck = false;
+    </script>
+    <script type="module" src="/index.js"></script>
+</head>
+<body>
+    <h1>Create a Tournament</h1>
+    <form id="tournamentForm"></form>
+        <label for="tournamentName">Tournament Name:</label>
+        <input type="text" id="tournamentName" name="tournamentName" required>
+        <br><br>
+
+        <label for="tournamentGame">Tournament Game:</label>
+        <select id="tournamentGame" name="tournamentGame" required>
+            <option value="" disabled selected>Select a game</option>
+            <option value="game1">Game 1</option>
+            <option value="game2">Game 2</option>
+            <option value="game3">Game 3</option>
+        </select>
+        <br><br>
+
+        <label for="startDateTime">Tournament Start Date/Time:</label>
+        <input type="datetime-local" id="startDateTime" name="startDateTime" required>
+        <br><br>
+
+        <label for="endDateTime">Tournament End Date/Time:</label>
+        <input type="datetime-local" id="endDateTime" name="endDateTime" required>
+        <br><br>
+
+        <label for="tournamentEntrants">Tournament Entrants:</label>
+        <textarea id="tournamentEntrants" name="tournamentEntrants" rows="5" cols="30" placeholder="Enter entrants separated by commas" required></textarea>
+        <br><br>
+
+        <button type="submit" id="submitButton">Create Tournament</button>
+    </form>
+    <script type="module" src="/create.js"></script>
+</body>
+</html>
